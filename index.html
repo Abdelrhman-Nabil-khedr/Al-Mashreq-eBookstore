@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>كتب تراثية ورقمية | مكتبة المشرق الإلكترونية</title>
+  <meta name="description" content="تصفح مكتبة المشرق الإلكترونية — أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال عبر منصات متعددة." />
+  <link rel="canonical" href="https://almashreqebookstore.com/" />
+  <link rel="icon" href="/assets/logo.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="مكتبة المشرق الإلكترونية" />
+  <meta property="og:title" content="كتب تراثية ورقمية | مكتبة المشرق الإلكترونية" />
+  <meta property="og:description" content="تصفح مكتبة المشرق الإلكترونية — أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال عبر منصات متعددة." />
+  <meta property="og:url" content="https://almashreqebookstore.com/" />
+  <meta property="og:image" content="https://almashreqebookstore.com/assets/logo.png" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="كتب تراثية ورقمية | مكتبة المشرق الإلكترونية" />
+  <meta name="twitter:description" content="تصفح مكتبة المشرق الإلكترونية — أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال." />
+  <meta name="twitter:image" content="https://almashreqebookstore.com/assets/logo.png" />
+
+  <!-- Structured Data: Organization / BookStore -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BookStore",
+    "name": "مكتبة المشرق الإلكترونية",
+    "alternateName": "Al-Mashreq eBookstore",
+    "url": "https://almashreqebookstore.com/",
+    "logo": "https://almashreqebookstore.com/assets/logo.png",
+    "image": "https://almashreqebookstore.com/assets/logo.png",
+    "description": "أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال لإحياء المجتمع الثقافي العربي بجودة عالية.",
+    "telephone": "+201012760710",
+    "email": "Al-mashreq.ebookstore@outlook.com",
+    "sameAs": [
+      "https://wa.me/201012760710"
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="/css/styles.css?v=16">
+  <link rel="stylesheet" href="/css/theme.css?v=13">
+  <!-- Mobile only (does not affect desktop) -->
+  <link rel="stylesheet" href="/css/mobile.css?v=16" media="(max-width: 980px)">
+
+  <!-- Immediate Theme & Direction check to prevent FOUC -->
+  <script>
+    (function(){
+      var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('lang', lang);
+    })();
+  </script>
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container inner">
+    <!-- Group 1: Brand (Logo + Title) -->
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="/assets/logo.png" alt="Al-Mashreq" />
+      <span class="brand-title" data-i18n="brand.title">مكتبة المشرق الإلكترونية</span>
+    </a>
+
+    <!-- Group 2: Main Navigation Links -->
+    <nav class="nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a class="navlink active" href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a class="navlink" href="latest.html" data-i18n="nav.latest">أحدث الإصدارات</a>
+      <a class="navlink" href="vision.html" data-i18n="nav.vision">الرؤية والمهمة</a>
+      <a class="navlink" href="about.html" data-i18n="nav.about">من نحن</a>
+      <a class="navlink" href="blog.html" data-i18n="nav.blog">المدونة</a>
+      <a class="navlink" href="contact.html" data-i18n="nav.contact">اتصل بنا</a>
+    </nav>
+
+    <!-- Group 3: Header Actions -->
+    <div class="header-actions">
+      <!-- Primary Auth Section -->
+      <div class="header-auth" id="headerAuth">
+        <!-- Guest State (Shown when not logged in) -->
+        <div class="auth-guest" id="authGuest">
+          <button type="button" class="header-action-btn auth-btn" id="openAuthModalBtn" aria-label="تسجيل الدخول أو حساب جديد" title="تسجيل الدخول / حساب جديد">
+            <svg class="auth-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="auth-btn-text" data-i18n="auth.loginOrRegister">تسجيل الدخول / حساب جديد</span>
+          </button>
+        </div>
+
+        <!-- User State (Shown when logged in) -->
+        <div class="auth-user" id="authUser" style="display: none;">
+          <span class="auth-greeting">
+            <span data-i18n="auth.hello">مرحباً،</span>
+            <strong class="auth-user-name" id="authUserName"></strong>
+          </span>
+          <button type="button" class="header-action-btn auth-logout-btn" id="logoutBtn" aria-label="تسجيل الخروج" title="تسجيل الخروج">
+            <svg class="auth-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span class="auth-btn-text" data-i18n="auth.logout">تسجيل الخروج</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Secondary Controls: Theme, Language, Menu -->
+      <div class="header-secondary-actions">
+        <!-- Dark / Light Mode Toggle -->
+        <button type="button" class="header-action-btn theme-toggle" id="themeToggle" aria-label="تبديل المظهر" title="تبديل الوضع الداكن / الفاتح">
+          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="action-btn-text" data-i18n="theme.toggle">داكن</span>
+        </button>
+
+        <!-- Language Toggle (EN/AR) -->
+        <button type="button" class="header-action-btn lang-toggle" id="langToggle" aria-label="Switch Language" title="تغيير اللغة (EN/AR)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span class="lang-text" id="langToggleText">English</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button type="button" class="header-action-btn menu-toggle" id="menuToggle" aria-label="القائمة" aria-expanded="false" title="القائمة">
+          <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span class="menu-toggle-text" data-i18n="nav.menu">القائمة</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="container page-shell">
+
+  <!-- Hero -->
+  <section class="hero hero-main" id="about">
+    <div class="hero-card">
+      <div class="hero-top">
+        <div class="hero-text">
+          <h1 class="hero-title">Al-Mashreq eBookstore</h1>
+          <p class="hero-sub" data-i18n="hero.sub">
+            كلّ فكرة تستحق أن تُروى، وكلّ قصة تستحق أن تُسمع.
+          </p>
+        </div>
+
+        <div class="hero-kpis">
+          <div class="kpi">
+            <div class="num" id="kpiTotal">—</div>
+            <div class="lbl" data-i18n="kpi.total">إجمالي الكتب</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="kpiShown">—</div>
+            <div class="lbl" data-i18n="kpi.shown">المعروض الآن</div>
+          </div>
+          <div class="kpi">
+            <div class="num" id="kpiCats">—</div>
+            <div class="lbl" data-i18n="kpi.cats">التصنيفات</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Layout -->
+  <div class="content-shell">
+
+    <!-- Compact Filtration Top Bar -->
+    <section class="sidebar filters-topbar" id="categories" aria-label="بحث وفلاتر">
+      <div class="side-card filters-card">
+        <div class="side-head filters-head">
+          <div class="filters-head-title">
+            <svg class="filters-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <h2 data-i18n="filters.heading">بحث وتصفية الكتب</h2>
+            <span class="filters-count-badge" id="filtersActiveCount" style="display:none;">0</span>
+          </div>
+
+          <!-- Mobile Modern Dropdown Toggle -->
+          <button id="toggleFilters" class="filters-toggle" type="button" aria-expanded="false" aria-controls="filtersBody">
+            <span class="toggle-text" data-i18n="filters.toggle">خيارات التصفية</span>
+            <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Filters Form Body -->
+        <div id="filtersBody" class="filters-body">
+          <div class="field field-search">
+            <span class="field-label" data-i18n="filters.searchLabel">بحث شامل</span>
+            <div class="input-wrap">
+              <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <input id="q" class="control" type="search"
+                     placeholder="ابحث بالعنوان، المؤلف، ISBN، كلمات مفتاحية..."
+                     data-i18n-placeholder="filters.searchPlaceholder"
+                     autocomplete="off" />
+            </div>
+          </div>
+
+          <div class="field field-cat">
+            <span class="field-label" data-i18n="filters.mainCatLabel">التصنيف الرئيسي</span>
+            <div class="custom-dropdown" id="dropdown-mainCat" data-name="mainCat">
+              <input type="hidden" id="mainCat" value="" />
+              <select id="mainCatSelect" name="mainCatSelect" class="category-select sr-only-select" aria-label="التصنيف الرئيسي" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">
+                <option value="" data-i18n="filters.mainCatPlaceholder">كل التصنيفات الرئيسية</option>
+              </select>
+              <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.mainCatPlaceholder">كل التصنيفات الرئيسية</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox"></ul>
+            </div>
+          </div>
+
+          <div class="field field-subcat">
+            <span class="field-label" data-i18n="filters.subCatLabel">التصنيف الفرعي</span>
+            <div class="custom-dropdown is-disabled" id="dropdown-subject2" data-name="subject2">
+              <input type="hidden" id="subject2" value="" />
+              <select id="subject2Select" name="subject2Select" class="category-select sr-only-select" aria-label="التصنيف الفرعي" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;" disabled>
+                <option value="" data-i18n="filters.subCatDisabled">اختر التصنيف الرئيسي أولاً</option>
+              </select>
+              <button type="button" class="dropdown-trigger" disabled aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.subCatDisabled">اختر التصنيف الرئيسي أولاً</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox"></ul>
+            </div>
+          </div>
+
+          <div class="field field-author">
+            <span class="field-label" data-i18n="filters.authorLabel">اسم المؤلف</span>
+            <div class="custom-dropdown" id="dropdown-author" data-name="author">
+              <input type="hidden" id="author" value="" />
+              <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.authorPlaceholder">كل المؤلفين</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox"></ul>
+            </div>
+          </div>
+
+          <div class="field field-lang">
+            <span class="field-label" data-i18n="filters.langLabel">اللغة</span>
+            <div class="custom-dropdown" id="dropdown-lang" data-name="lang">
+              <input type="hidden" id="lang" value="" />
+              <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.langPlaceholder">كل اللغات</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox"></ul>
+            </div>
+          </div>
+
+          <div class="field field-view">
+            <span class="field-label" data-i18n="filters.viewLabel">العرض حسب</span>
+            <div class="custom-dropdown" id="dropdown-viewBy" data-name="viewBy">
+              <input type="hidden" id="viewBy" value="author" />
+              <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.viewAuthor">المؤلف</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox">
+                <li class="dropdown-item is-selected" data-value="author" role="option">المؤلف</li>
+                <li class="dropdown-item" data-value="category" role="option">التصنيف</li>
+                <li class="dropdown-item" data-value="language" role="option">اللغة</li>
+                <li class="dropdown-item" data-value="alpha" role="option">الترتيب الأبجدي</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="field field-sort">
+            <span class="field-label" data-i18n="filters.sortLabel">الترتيب</span>
+            <div class="custom-dropdown" id="dropdown-sortBy" data-name="sortBy">
+              <input type="hidden" id="sortBy" value="author" />
+              <button type="button" class="dropdown-trigger" aria-haspopup="listbox" aria-expanded="false">
+                <span class="dropdown-value" data-i18n="filters.sortAuthor">حسب المؤلف</span>
+                <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              <ul class="dropdown-menu" role="listbox">
+                <li class="dropdown-item is-selected" data-value="author" role="option">حسب المؤلف</li>
+                <li class="dropdown-item" data-value="az" role="option">A → Z (العنوان)</li>
+                <li class="dropdown-item" data-value="za" role="option">Z → A (العنوان)</li>
+                <li class="dropdown-item" data-value="lang" role="option">حسب اللغة</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="field field-reset">
+            <span class="field-label field-label-empty" aria-hidden="true">&nbsp;</span>
+            <button id="reset" class="btn btn-reset" type="button">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path>
+                <path d="M3 3v5h5"></path>
+              </svg>
+              <span data-i18n="filters.resetBtn">إعادة ضبط</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Area -->
+    <section class="results-area">
+      <div id="results"></div>
+      <nav id="pagination" class="pagination-container" aria-label="تنقل الصفحات"></nav>
+      <div class="page-foot"><span data-i18n="footer.generated">Generated from Excel</span> • <span id="generatedAt">—</span></div>
+    </section>
+
+  </div>
+</main>
+
+  <!-- Site Footer (Task 6: Modern Global Footer) -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-container">
+
+      <!-- Top Columns Grid -->
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand & About -->
+        <div class="footer-col footer-col-brand">
+          <a class="foot-brand" href="index.html" aria-label="Al-Mashreq eBookstore">
+            <img class="foot-logo" src="/assets/logo.png" alt="Al-Mashreq" width="46" height="46" loading="lazy" />
+            <div class="foot-brand-text">
+              <strong data-i18n="brand.title">مكتبة المشرق الإلكترونية</strong>
+              <span class="foot-brand-tag" data-i18n="footer.desc">الاحترافية — التناغم — التواصل</span>
+            </div>
+          </a>
+          <p class="foot-bio" data-i18n="footer.brandBio">
+            أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال لإحياء المجتمع الثقافي العربي بجودة عالية.
+          </p>
+          <div class="foot-socials" aria-label="وسائل التواصل الاجتماعي">
+            <!-- WhatsApp -->
+            <a class="social-btn" href="https://wa.me/201012760710" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+            <!-- Email -->
+            <a class="social-btn" href="mailto:Al-mashreq.ebookstore@outlook.com" aria-label="Email" title="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <!-- Facebook -->
+            <a class="social-btn" href="https://www.facebook.com/share/1FVnu3cTWN/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <!-- YouTube -->
+            <a class="social-btn" href="https://www.youtube.com/@al-mashreqebookstore2209" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <!-- Amazon -->
+            <a class="social-btn" href="https://www.amazon.com/s?k=Al-Mashreq+eBookstore&i=digital-text" target="_blank" rel="noopener" aria-label="Amazon" title="Amazon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </a>
+            <!-- OverDrive -->
+            <a class="social-btn" href="https://www.overdrive.com/publishers/al-mashreq-ebookstore" target="_blank" rel="noopener" aria-label="OverDrive" title="OverDrive">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </a>
+            <!-- YouScribe -->
+            <a class="social-btn" href="https://en.youscribe.com/al_mashreq/" target="_blank" rel="noopener" aria-label="YouScribe" title="YouScribe">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </a>
+            <!-- Jarir -->
+            <a class="social-btn" href="https://www.jarirreader.com/ar/publisher/272/%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener" aria-label="Jarir" title="Jarir">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+            <!-- Rufoof -->
+            <a class="social-btn" href="https://rufoof.com/ar/publisher/362/Al-Mashreq-eBookstore" target="_blank" rel="noopener" aria-label="Rufoof" title="Rufoof">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colQuick">روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="foot-nav-item" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="latest.html" class="foot-nav-item" data-i18n="nav.latest">أحدث الإصدارات</a></li>
+            <li><a href="vision.html" class="foot-nav-item" data-i18n="nav.vision">الرؤية والمهمة</a></li>
+            <li><a href="about.html" class="foot-nav-item" data-i18n="nav.about">من نحن</a></li>
+            <li><a href="blog.html" class="foot-nav-item" data-i18n="nav.blog">المدونة</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Explore Books -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colExplore">استكشف الكتب</h3>
+          <ul class="footer-links">
+            <li><a href="index.html?category=Fiction" class="foot-nav-item footer-cat-link" data-cat="Fiction" data-i18n="footer.catFiction">روايات وأدب</a></li>
+            <li><a href="index.html?category=Heritage" class="foot-nav-item footer-cat-link" data-cat="Heritage" data-i18n="footer.catHeritage">كتب التراث العربي</a></li>
+            <li><a href="index.html?category=Nonfiction" class="foot-nav-item footer-cat-link" data-cat="Nonfiction" data-i18n="footer.catTrans">ترجمات عالمية</a></li>
+            <li><a href="index.html?category=Children%27s+Fiction" class="foot-nav-item footer-cat-link" data-cat="Children's Fiction" data-i18n="footer.catKids">كتب الأطفال واليافعين</a></li>
+            <li><a href="index.html?category=" class="foot-nav-item footer-cat-link" data-cat="" data-i18n="footer.catAll">الفهرس الشامل</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & Legal -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colSupport">الدعم والمساعدة</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="foot-nav-item" data-i18n="footer.contact">اتصل بنا</a></li>
+            <li><a href="terms.html" class="foot-nav-item" data-i18n="footer.terms">الشروط والأحكام</a></li>
+            <li><a href="privacy.html" class="foot-nav-item" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
+            <li><a href="https://wa.me/201012760710" target="_blank" rel="noopener" class="foot-nav-item" data-i18n="footer.whatsapp">دعم واتساب</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar Row -->
+      <div class="footer-bottom">
+        <div class="foot-copy">
+          © <span id="year"></span> <span data-i18n="footer.copy">مكتبة المشرق الإلكترونية — جميع الحقوق محفوظة</span>
+        </div>
+
+        <div class="footer-bottom-meta">
+          <span class="foot-craft" data-i18n="footer.madeWith">صُنع بعناية للقارئ العربي</span>
+          <button type="button" class="back-to-top" id="backToTop" aria-label="العودة للأعلى" title="العودة للأعلى">
+            <span data-i18n="footer.backToTop">للأعلى</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================
+       Phase 11: Authentication Modal (Login / Register)
+       ========================================== -->
+  <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle" aria-hidden="true">
+    <div class="auth-modal-backdrop" id="authModalBackdrop"></div>
+    <div class="auth-modal-dialog">
+      <button type="button" class="auth-modal-close" id="closeAuthModalBtn" aria-label="إغلاق النافذة">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="auth-modal-header">
+        <div class="auth-modal-badge">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+        </div>
+        <h2 class="auth-modal-title" id="authModalTitle" data-i18n="brand.title">مكتبة المشرق الإلكترونية</h2>
+        <p class="auth-modal-sub" id="authModalSub" data-i18n="auth.modalSub">سجل الدخول أو أنشئ حساباً للاستمتاع بجميع ميزات المكتبة</p>
+      </div>
+
+      <!-- Switchable Tabs -->
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab-btn is-active" id="tabBtnLogin" role="tab" aria-selected="true" data-tab="login" data-i18n="auth.loginTitle">
+          تسجيل الدخول
+        </button>
+        <button type="button" class="auth-tab-btn" id="tabBtnRegister" role="tab" aria-selected="false" data-tab="register" data-i18n="auth.registerTitle">
+          حساب جديد
+        </button>
+      </div>
+
+      <div class="auth-modal-body">
+        <!-- Feedback Alert Box -->
+        <div class="auth-alert" id="authAlert" role="alert">
+          <span class="auth-alert-icon"></span>
+          <span class="auth-alert-text" id="authAlertText"></span>
+        </div>
+
+        <!-- Login Form -->
+        <form class="auth-form is-active" id="loginForm" novalidate>
+          <div class="auth-field">
+            <label class="auth-label" for="loginEmail" data-i18n="auth.email">البريد الإلكتروني</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="email" id="loginEmail" name="email" required autocomplete="username" placeholder="name@example.com" dir="ltr">
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="loginPassword" data-i18n="auth.password">كلمة المرور</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="password" id="loginPassword" name="password" required autocomplete="current-password" placeholder="••••••••" dir="ltr">
+              <button type="button" class="auth-password-toggle" data-target="loginPassword" aria-label="إظهار / إخفاء كلمة المرور">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-submit-btn" id="loginSubmitBtn">
+            <span class="auth-btn-label" data-i18n="auth.submitLogin">تسجيل الدخول</span>
+          </button>
+
+          <div class="auth-switch-prompt">
+            <span data-i18n="auth.noAccount">ليس لديك حساب؟</span>
+            <button type="button" class="auth-switch-link" id="switchToRegisterBtn" data-i18n="auth.registerTitle">إنشاء حساب جديد</button>
+          </div>
+        </form>
+
+        <!-- Register Form -->
+        <form class="auth-form" id="registerForm" novalidate>
+          <div class="auth-field">
+            <label class="auth-label" for="registerName" data-i18n="auth.name">الاسم الكامل</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="text" id="registerName" name="name" required autocomplete="name" placeholder="مثال: أحمد محمود">
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="registerEmail" data-i18n="auth.email">البريد الإلكتروني</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="email" id="registerEmail" name="email" required autocomplete="email" placeholder="name@example.com" dir="ltr">
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="registerPassword" data-i18n="auth.password">كلمة المرور (8 أحرف على الأقل)</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="password" id="registerPassword" name="password" required minlength="8" autocomplete="new-password" placeholder="••••••••" dir="ltr">
+              <button type="button" class="auth-password-toggle" data-target="registerPassword" aria-label="إظهار / إخفاء كلمة المرور">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="auth-field">
+            <label class="auth-label" for="registerPasswordConfirm" data-i18n="auth.passwordConfirm">تأكيد كلمة المرور</label>
+            <div class="auth-input-wrap">
+              <input class="auth-input" type="password" id="registerPasswordConfirm" name="password_confirmation" required minlength="8" autocomplete="new-password" placeholder="••••••••" dir="ltr">
+              <button type="button" class="auth-password-toggle" data-target="registerPasswordConfirm" aria-label="إظهار / إخفاء كلمة المرور">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="auth-submit-btn" id="registerSubmitBtn">
+            <span class="auth-btn-label" data-i18n="auth.submitRegister">إنشاء حساب جديد</span>
+          </button>
+
+          <div class="auth-switch-prompt">
+            <span data-i18n="auth.haveAccount">لديك حساب بالفعل؟</span>
+            <button type="button" class="auth-switch-link" id="switchToLoginBtn" data-i18n="auth.loginTitle">تسجيل الدخول</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- ✅ Universal Header, Theme & Language Controller -->
+<script src="/js/global.js?v=16"></script>
+<!-- ✅ Catalog & Dropdown filtration controller -->
+<script src="/js/script.js?v=16"></script>
+
+<!-- ✅ Mobile-only: modern top dropdown filter toggle -->
+<script>
+  (function(){
+    var sidebar = document.querySelector('.sidebar');
+    var toggle = document.getElementById('toggleFilters');
+    var body = document.getElementById('filtersBody');
+    if (!sidebar || !toggle || !body) return;
+
+    var toggleText = toggle.querySelector('.toggle-text');
+
+    function updateState(collapsed) {
+      var isAr = (document.documentElement.getAttribute('lang') || 'ar') === 'ar';
+      if (collapsed) {
+        sidebar.classList.add('filters-collapsed');
+        toggle.setAttribute('aria-expanded', 'false');
+        if (toggleText) toggleText.textContent = isAr ? 'خيارات التصفية' : 'Filter Options';
+      } else {
+        sidebar.classList.remove('filters-collapsed');
+        toggle.setAttribute('aria-expanded', 'true');
+        if (toggleText) toggleText.textContent = isAr ? 'إخفاء الفلاتر' : 'Hide Filters';
+      }
+    }
+
+    // Default on mobile: collapsed as a top dropdown so books are immediately visible
+    if (window.matchMedia && window.matchMedia('(max-width: 980px)').matches) {
+      updateState(true);
+    } else {
+      updateState(false);
+    }
+
+    toggle.addEventListener('click', function(e){
+      e.preventDefault();
+      var isCollapsed = sidebar.classList.contains('filters-collapsed');
+      updateState(!isCollapsed);
+      if (isCollapsed) {
+        var q = document.getElementById('q');
+        if (q && typeof q.focus === 'function') {
+          setTimeout(function(){ q.focus({ preventScroll: true }); }, 120);
+        }
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>

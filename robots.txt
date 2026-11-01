@@ -1,0 +1,11 @@
+# =========================
+# Al-Mashreq eBookstore
+# robots.txt
+# =========================
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://almashreqebookstore.com/sitemap.xml
+Sitemap: https://almashreqebookstore.com/sitemap-books.xml

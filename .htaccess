@@ -1,0 +1,144 @@
+# =========================
+# Al-Mashreq eBookstore
+# Production .htaccess
+# =========================
+
+Options -Indexes
+AddDefaultCharset UTF-8
+
+# -------------------------
+# Correct MIME types for fonts and assets
+# -------------------------
+AddType font/ttf   .ttf
+AddType font/otf   .otf
+AddType font/woff  .woff
+AddType font/woff2 .woff2
+AddType application/json .json
+AddType text/css .css
+AddType application/javascript .js
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # -------------------------
+  # 1. Force HTTPS
+  # -------------------------
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://almashreqebookstore.com%{REQUEST_URI} [R=301,L]
+
+  # -------------------------
+  # 2. Force non-www canonical domain
+  # -------------------------
+  RewriteCond %{HTTP_HOST} ^www\.almashreqebookstore\.com$ [NC]
+  RewriteRule ^ https://almashreqebookstore.com%{REQUEST_URI} [R=301,L]
+
+  # -------------------------
+  # 3. Canonicalize /index.html → /
+  # -------------------------
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html[\ ?] [NC]
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # -------------------------
+  # 4. Redirect policy.html → privacy.html (canonical)
+  # -------------------------
+  RewriteRule ^policy\.html$ /privacy.html [R=301,L]
+
+  # -------------------------
+  # 5. Clean URLs for Book pages: /book/ISBN → book.html?isbn=ISBN
+  # -------------------------
+  RewriteRule ^book/([0-9Xx\-]+)/?$ book.html?isbn=$1 [QSA,L]
+
+  # -------------------------
+  # 6. Return 410 Gone for legacy spam / old PHP paths
+  #    (Instructs Google to permanently drop these from its index)
+  # -------------------------
+  RewriteRule ^goods/ - [G,L]
+  RewriteRule ^ar/ - [G,L]
+  RewriteRule \.(php|phtml|php3|php4|php5|php7|phps)$ - [G,L]
+
+</IfModule>
+
+# -------------------------
+# 7. GZIP Compression (mod_deflate)
+#    Reduces books.json from 12.6 MB → ~1.4 MB on the wire
+# -------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html
+  AddOutputFilterByType DEFLATE text/css
+  AddOutputFilterByType DEFLATE text/plain
+  AddOutputFilterByType DEFLATE text/xml
+  AddOutputFilterByType DEFLATE application/json
+  AddOutputFilterByType DEFLATE application/javascript
+  AddOutputFilterByType DEFLATE application/x-javascript
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf
+  AddOutputFilterByType DEFLATE font/otf
+  AddOutputFilterByType DEFLATE font/woff
+  AddOutputFilterByType DEFLATE font/woff2
+</IfModule>
+
+# -------------------------
+# 8. Browser Caching (mod_expires)
+#    Prevents repeated heavy downloads; eliminates 5xx overload
+# -------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 month"
+
+  # JSON data: 1 day (books may update)
+  ExpiresByType application/json "access plus 1 day"
+
+  # HTML pages: 1 hour
+  ExpiresByType text/html "access plus 1 hour"
+
+  # CSS & JS: 1 year (cache-busted via ?v= query strings)
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType application/x-javascript "access plus 1 year"
+
+  # Images: 1 year
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+
+  # Fonts: 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/otf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# -------------------------
+# 9. Security & CORS Headers
+# -------------------------
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # CORS for fonts
+  <FilesMatch "\.(ttf|otf|woff|woff2)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+
+  # Cache-Control headers aligned with mod_expires
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.(jpg|jpeg|png|webp|ico|svg)$">
+    Header set Cache-Control "public, max-age=31536000"
+  </FilesMatch>
+  <FilesMatch "\.json$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+</IfModule>
+
+# -------------------------
+# 10. Extra hard block for PHP execution (fallback if mod_rewrite is off)
+# -------------------------
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps)$">
+  Require all denied
+</FilesMatch>

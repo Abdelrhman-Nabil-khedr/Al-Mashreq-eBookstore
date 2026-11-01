@@ -1,0 +1,991 @@
+/* =========================================================
+   Al-Mashreq eBookstore — mobile.css (FINAL)
+   GOAL:
+   - Mobile looks like desktop (same layout), just smaller.
+   - Filters are ALWAYS visible on mobile (no drawer).
+   - Add a professional collapse/expand for filters (mobile only).
+   - Desktop/Windows is NOT affected (media only).
+   ========================================================= */
+
+@media (max-width: 980px){
+
+  /* =========================================================
+     1) GLOBAL OVERFLOW PREVENTION (html and body only)
+     ========================================================= */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative !important;
+  }
+
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding-inline: 14px !important;
+  }
+
+  /* =========================================================
+     A) MOBILE HEADER REDESIGN (Clean Two-Row Layout)
+     ========================================================= */
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    width: 100% !important;
+    background: var(--header-bg, #0b1b33) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  /* Two clean, well-spaced horizontal rows via Grid */
+  .site-header .container.inner{
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-template-rows: auto auto !important;
+    row-gap: 8px !important;
+    column-gap: 10px !important;
+    align-items: center !important;
+    min-height: auto !important;
+    padding: 10px 14px !important;
+    padding-inline-start: max(14px, env(safe-area-inset-left)) !important;
+    padding-inline-end: max(14px, env(safe-area-inset-right)) !important;
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* TOP ROW: Brand (Logo + Title) on Start Side */
+  .site-header .brand{
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+    flex-shrink: 1 !important;
+  }
+
+  .site-header .brand-logo{ 
+    width: 38px !important; 
+    height: 38px !important; 
+    border-radius: 10px !important;
+    padding: 3px !important;
+    background: #ffffff !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18) !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
+  }
+
+  .site-header .brand-title{
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    line-height: 1.25 !important;
+    color: #ffffff !important;
+    letter-spacing: -0.01em !important;
+  }
+
+  /* Header Actions container expands into parent grid rows */
+  .site-header .header-actions{
+    display: contents !important;
+  }
+
+  /* TOP ROW: Primary Auth Button on Opposite (End) Side */
+  .site-header .header-auth{
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    justify-self: end !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
+    min-width: 0 !important;
+  }
+
+  .site-header .header-auth .auth-guest,
+  .site-header .header-auth .auth-user{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  /* Strict Hiding for inactive Auth State */
+  .site-header .header-auth .auth-guest[hidden],
+  .site-header .header-auth .auth-user[hidden],
+  .site-header .header-auth .auth-guest.is-hidden,
+  .site-header .header-auth .auth-user.is-hidden,
+  .site-header .header-auth .auth-guest[style*="display: none"],
+  .site-header .header-auth .auth-guest[style*="display:none"],
+  .site-header .header-auth .auth-user[style*="display: none"],
+  .site-header .header-auth .auth-user[style*="display:none"]{
+    display: none !important;
+  }
+
+  .site-header .header-action-btn.auth-btn{
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 0 12px !important;
+    font-size: 0.8rem !important;
+    font-weight: 750 !important;
+    border-radius: 10px !important;
+    background: linear-gradient(135deg, rgba(23, 105, 255, 0.45) 0%, rgba(99, 102, 241, 0.45) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.28) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .site-header .header-action-btn.auth-logout-btn{
+    min-height: 36px !important;
+    height: 36px !important;
+    padding: 0 10px !important;
+    font-size: 0.78rem !important;
+    font-weight: 750 !important;
+    border-radius: 10px !important;
+    background: rgba(239, 68, 68, 0.18) !important;
+    border: 1px solid rgba(239, 68, 68, 0.35) !important;
+    color: #fecaca !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    white-space: nowrap !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .site-header .header-action-btn.auth-btn:active,
+  .site-header .header-action-btn.auth-logout-btn:active{
+    transform: scale(0.96) !important;
+  }
+
+  .site-header .auth-greeting{
+    font-size: 0.78rem !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    display: inline-flex !important;
+    gap: 4px !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  .site-header .auth-user-name{
+    max-width: 80px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+  }
+
+  /* BOTTOM ROW: Symmetrical 3-Column Control Bar (Theme, Lang, Menu) */
+  .site-header .header-secondary-actions{
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding-top: 8px !important;
+    margin-top: 2px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-sizing: border-box !important;
+    align-items: stretch !important;
+  }
+
+  .site-header .header-secondary-actions .header-action-btn,
+  .site-header .header-secondary-actions .menu-toggle{
+    width: 100% !important;
+    min-height: 38px !important;
+    height: 38px !important;
+    padding: 0 8px !important;
+    border-radius: 10px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+  }
+
+  .site-header .header-secondary-actions .header-action-btn:active,
+  .site-header .header-secondary-actions .menu-toggle:active{
+    transform: scale(0.97) !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .site-header .header-secondary-actions .header-action-btn svg,
+  .site-header .header-secondary-actions .menu-toggle svg{
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .site-header .header-secondary-actions .menu-toggle.is-open{
+    background: linear-gradient(135deg, rgba(23, 105, 255, 0.4), rgba(242, 138, 27, 0.3)) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 0 12px rgba(23, 105, 255, 0.35) !important;
+  }
+
+  /* Mobile Navigation Dropdown Drawer */
+  .site-header .nav{
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    inset-inline: 0 !important;
+    background: var(--header-bg, #0b1b33) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.14) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 14px 16px 18px !important;
+    gap: 8px !important;
+    flex-direction: column !important;
+    z-index: 1001 !important;
+    overflow: visible !important;
+  }
+
+  .site-header .nav.is-open{
+    display: flex !important;
+    animation: mobileNavSlide 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  @keyframes mobileNavSlide{
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .site-header .navlink{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 18px !important;
+    border-radius: 14px !important;
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none !important;
+    transition: all 0.15s ease !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  }
+
+  .site-header .navlink:hover,
+  .site-header .navlink:active{
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: #ffffff !important;
+    transform: translateY(-1px) !important;
+  }
+
+  .site-header .navlink.active{
+    background: linear-gradient(90deg, rgba(23, 105, 255, 0.35) 0%, rgba(242, 138, 27, 0.18) 100%) !important;
+    border-color: rgba(23, 105, 255, 0.5) !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(23, 105, 255, 0.25) !important;
+    font-weight: 800 !important;
+  }
+
+  /* Responsive refinements for small screens (under 480px) */
+  @media (max-width: 480px){
+    .site-header .container.inner{
+      padding: 8px 12px !important;
+      row-gap: 6px !important;
+      column-gap: 8px !important;
+    }
+    .site-header .brand-logo{
+      width: 35px !important;
+      height: 35px !important;
+    }
+    .site-header .brand-title{
+      font-size: 0.92rem !important;
+      max-width: 170px !important;
+    }
+    .site-header .header-action-btn.auth-btn,
+    .site-header .header-action-btn.auth-logout-btn{
+      min-height: 35px !important;
+      height: 35px !important;
+      padding: 0 10px !important;
+      font-size: 0.76rem !important;
+    }
+    .site-header .header-secondary-actions{
+      gap: 6px !important;
+      padding-top: 6px !important;
+    }
+    .site-header .header-secondary-actions .header-action-btn,
+    .site-header .header-secondary-actions .menu-toggle{
+      min-height: 35px !important;
+      height: 35px !important;
+      padding: 0 6px !important;
+      font-size: 0.76rem !important;
+      gap: 5px !important;
+    }
+  }
+
+  /* Very small screens (under 360px) */
+  @media (max-width: 360px){
+    .site-header .brand-title{
+      font-size: 0.84rem !important;
+      max-width: 130px !important;
+    }
+    .site-header .header-action-btn.auth-btn,
+    .site-header .header-action-btn.auth-logout-btn{
+      padding: 0 8px !important;
+      font-size: 0.72rem !important;
+    }
+    .site-header .header-secondary-actions .header-action-btn,
+    .site-header .header-secondary-actions .menu-toggle{
+      padding: 0 4px !important;
+      font-size: 0.70rem !important;
+      gap: 4px !important;
+    }
+  }
+
+  /* =========================
+     B) IMPORTANT FIX — show filters ABOVE results
+     - order doesn't work in CSS Grid, so switch to flex-column on mobile
+     ========================= */
+  .content-shell{
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.85rem !important;
+  }
+
+  .sidebar,
+  .filters-topbar{
+    display: block !important;
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    padding: 0 !important;
+    z-index: auto !important;
+    width: 100% !important;
+    order: 0 !important;
+  }
+
+  .results-area{ order: 1 !important; }
+
+  body.filters-open{ overflow: auto !important; }
+
+  .side-card,
+  .filters-card{
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0.85rem 1rem !important;
+    border-radius: 18px !important;
+    box-shadow: 0 8px 22px rgba(2,10,25,.07) !important;
+    border: 1px solid var(--border-color) !important;
+    background: var(--card-bg) !important;
+  }
+
+  .side-head,
+  .filters-head{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    border-bottom: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+  }
+
+  .sidebar:not(.filters-collapsed) .filters-head{
+    padding-bottom: 10px !important;
+    border-bottom: 1px solid rgba(2,10,25,.07) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .side-head h2,
+  .filters-head-title h2{
+    font-size: 0.95rem !important;
+    margin: 0 !important;
+    font-weight: 900 !important;
+  }
+
+  .filters-head-title{
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+  }
+
+  /* =========================
+     B2) Mobile filters dropdown toggle
+     ========================= */
+  .filters-toggle{
+    margin-inline-start: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    min-height: 36px !important;
+    padding: 6px 12px !important;
+    border-radius: 999px !important;
+    border: 1px solid rgba(23,105,255,.2) !important;
+    background: rgba(23,105,255,.07) !important;
+    color: var(--blue) !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    transition: all .2s ease !important;
+  }
+
+  .filters-toggle .chevron-icon{
+    transition: transform .25s ease !important;
+  }
+
+  .sidebar:not(.filters-collapsed) .filters-toggle{
+    background: var(--blue) !important;
+    color: #fff !important;
+    border-color: var(--blue) !important;
+  }
+
+  .sidebar:not(.filters-collapsed) .filters-toggle .chevron-icon{
+    transform: rotate(180deg) !important;
+  }
+
+  /* Modern Dropdown Animation */
+  .filters-body{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px 10px !important;
+    max-height: 1200px !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    margin-top: 10px !important;
+    transition: max-height .35s cubic-bezier(0.4, 0, 0.2, 1), opacity .25s ease, margin-top .35s ease !important;
+  }
+
+  .sidebar.filters-collapsed .filters-body{
+    max-height: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    pointer-events: none !important;
+  }
+
+  /* Custom Dropdown Mobile Styles */
+  .dropdown-trigger{
+    min-height: 42px !important;
+    height: 42px !important;
+    font-size: 0.84rem !important;
+    padding: 0 10px !important;
+    border-radius: 12px !important;
+  }
+  .dropdown-menu{
+    max-height: 230px !important;
+    border-radius: 14px !important;
+    box-shadow: 0 12px 30px rgba(2,10,25,.18) !important;
+  }
+  .dropdown-item{
+    padding: 8px 10px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .field{
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .field-search,
+  .field-cat,
+  .field-subcat,
+  .field-author,
+  .field-lang,
+  .field-reset{
+    grid-column: span 2 !important;
+  }
+
+  .field-view,
+  .field-sort{
+    grid-column: span 1 !important;
+  }
+
+  .field-label{
+    font-size: 0.75rem !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.35 !important;
+    font-weight: 800 !important;
+  }
+
+  .field-label-empty{
+    display: none !important;
+  }
+
+  .control{
+    min-height: 42px !important;
+    height: 42px !important;
+    border-radius: 12px !important;
+    font-size: 0.88rem !important;
+    padding: 0 12px !important;
+  }
+
+  select.control{
+    padding-inline-start: 36px !important;
+    padding-inline-end: 12px !important;
+  }
+
+  .input-wrap .control{
+    padding-inline-start: 36px !important;
+    padding-inline-end: 12px !important;
+  }
+
+  .input-wrap .input-icon{
+    inset-inline-start: 12px !important;
+  }
+
+  .btn-reset{
+    min-height: 42px !important;
+    height: 42px !important;
+    border-radius: 12px !important;
+    font-size: 0.88rem !important;
+    width: 100% !important;
+  }
+
+  /* Hide obsolete drawer controls */
+  .filters-fab,
+  #openFilters,
+  #closeFilters,
+  .filters-close{
+    display: none !important;
+  }
+
+  /* =========================
+     C) HERO — tighter
+     ========================= */
+  .hero-main{ padding: 12px 0 6px !important; }
+  .hero-card{ padding: 0.85rem !important; border-radius: 18px !important; }
+  .hero-title{ font-size: 1.15rem !important; }
+  .hero-sub{ font-size: 0.95rem !important; }
+  .hero-kpis{ 
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important; 
+    width: 100% !important;
+    margin: 12px 0 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .hero-kpis .kpi{
+    min-width: 0 !important;
+    width: 100% !important;
+    padding: 10px 4px !important;
+    margin: 0 !important;
+    border-radius: 14px !important;
+    text-align: center !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .hero-kpis .num{ 
+    font-size: 1.05rem !important; 
+    font-weight: 900 !important; 
+    line-height: 1.2 !important; 
+    color: #ffffff !important;
+  }
+  .hero-kpis .lbl{ 
+    font-size: 0.70rem !important; 
+    margin-top: 4px !important; 
+    line-height: 1.25 !important; 
+    white-space: nowrap !important; 
+    color: rgba(255, 255, 255, 0.88) !important;
+  }
+
+  /* =========================
+     D) BOOK GRID — compact
+     ========================= */
+  .grid{ gap: 0.85rem !important; }
+
+  @media (min-width: 520px){
+    .grid{ grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  }
+
+  .book-card{ padding: 0.75rem !important; border-radius: 18px !important; }
+  .book-card h3{
+    font-size: 1rem !important;
+    margin: 0.7rem 0 0.35rem !important;
+  }
+  .book-author{ font-size: 0.85rem !important; }
+  .book-links{ gap: 0.5rem !important; margin-top: 0.7rem !important; }
+  .link-chip{
+    min-height: 38px !important;
+    padding: 0.4rem 0.65rem !important;
+    font-size: 0.78rem !important;
+    border-radius: 999px !important;
+  }
+
+  /* =========================
+     E) FOOTER — compact
+     ========================= */
+  .site-footer{
+    position: relative !important;
+    z-index: 1005 !important;
+    pointer-events: auto !important;
+  }
+  .site-footer a,
+  .site-footer button,
+  .site-footer .social-btn,
+  .site-footer .foot-nav-item,
+  .site-footer .foot-brand{
+    position: relative !important;
+    z-index: 1006 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+  .footer-container{
+    padding-block: 32px 20px !important;
+    padding-inline: 14px !important;
+  }
+}
+@media (max-width: 980px){
+
+  /* =========================
+     BOOK CARDS — Mobile polish
+     ========================= */
+
+  /* 1) Tighten card spacing */
+  .book-card{
+    padding: 0.85rem !important;
+    border-radius: 18px !important;
+  }
+
+  /* 2) Cover: fixed 2:3 aspect ratio with object-fit cover */
+  .book-cover-wrapper,
+  .book-cover-wrap{
+    aspect-ratio: 2 / 3 !important;
+    width: 100% !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+  }
+  .book-cover,
+  .book-card img{
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+    display: block !important;
+  }
+
+  /* 3) Title & meta: cleaner hierarchy with 2-line clamp */
+  .book-card h3{
+    margin: 0.65rem 0 0.35rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.4 !important;
+    min-height: calc(1.4em * 2) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .book-card h3 a,
+  .book-title-link{
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* أي وصف للمؤلف أو سطر ثانوي */
+  .book-author,
+  .meta,
+  .book-meta{
+    margin-top: 0.15rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.45 !important;
+    opacity: 0.95;
+  }
+
+  /* 4) Improve "Author / Language / ISBN" rows (even if they're plain text) */
+  .book-card p,
+  .book-card .line,
+  .book-card .kv{
+    margin: 0.25rem 0 !important;
+  }
+
+  /* 5) Links row: wrap nicely, bigger tap targets, less empty space */
+  .book-links{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.45rem !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .link-chip,
+  .book-links a{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 42px !important;     /* لمس أسهل */
+    padding: 0.45rem 0.75rem !important;
+    border-radius: 999px !important;
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    white-space: nowrap !important;
+  }
+
+  /* 6) Make chips feel "buttony" and consistent */
+  .link-chip:active,
+  .book-links a:active{
+    transform: scale(.98);
+  }
+
+  /* 7) Reduce huge bottom gaps between cards */
+  #results .group,
+  #results .section,
+  .results-area{
+    row-gap: 0.9rem !important;
+  }
+
+  /* 8) Optional: make category header ("Fiction") tighter */
+  #results h2,
+  #results h3.section-title{
+    margin: 0.75rem 0 0.35rem !important;
+    font-size: 1.2rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* 9) Optional: reduce the "Generated from Excel" spacing */
+  .page-foot{
+    margin-top: 0.75rem !important;
+    font-size: 0.8rem !important;
+    opacity: 0.8 !important;
+  }
+}
+
+@media (max-width: 980px){
+
+  /* =========================
+     BOOK BADGES (Mobile Only)
+     ========================= */
+
+  .book-badges{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    justify-content: center !important;
+    margin: 6px 0 8px !important;
+    width: 100% !important;
+  }
+
+  .badge{
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    max-width: 100% !important;
+    padding: 3px 8px !important;
+    border-radius: 999px !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    border: 1px solid rgba(0,0,0,.06) !important;
+  }
+
+  .badge-author{
+    background: rgba(23,105,255,.1) !important;
+    color: var(--blue) !important;
+    border-color: rgba(23,105,255,.2) !important;
+  }
+
+  .badge-lang{
+    background: rgba(16,185,129,.12) !important;
+    color: #10b981 !important;
+    border-color: rgba(16,185,129,.2) !important;
+  }
+
+  .badge-isbn{
+    background: var(--input-bg) !important;
+    color: var(--muted-color) !important;
+    border-color: var(--border-color) !important;
+  }
+
+  /* =========================
+     PAGINATION & TOUCH TARGETS (Mobile Polish)
+     ========================= */
+  .pagination-container{
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+    gap: 12px !important;
+  }
+
+  .pagination-controls{
+    gap: 5px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .pagination-btn{
+    min-width: 42px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    padding: 0 10px !important;
+    font-size: 0.85rem !important;
+    border-radius: 12px !important;
+  }
+
+  .pagination-btn:active:not(:disabled){
+    transform: scale(0.96) !important;
+  }
+
+  .pagination-btn.prev-btn,
+  .pagination-btn.next-btn{
+    padding: 0 14px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .pagination-info{
+    font-size: 0.8rem !important;
+    padding: 6px 14px !important;
+  }
+
+  /* =========================
+     BOOK DETAILS PAGE (Mobile Polish)
+     ========================= */
+  .book-layout{
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .book-media{
+    position: static !important;
+    max-width: 280px !important;
+    padding: 16px !important;
+    margin: 0 auto 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .book-detail-cover{
+    max-width: 250px !important;
+    margin: 0 auto !important;
+    border-radius: 14px !important;
+  }
+
+  .book-h1{
+    font-size: 1.45rem !important;
+    text-align: center !important;
+  }
+
+  .book-subtitle,
+  .book-byline{
+    text-align: center !important;
+  }
+
+  .book-header .badges{
+    justify-content: center !important;
+  }
+
+  .book-cta-grid{
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+
+  .book-cta-btn{
+    width: 100% !important;
+    min-height: 48px !important;
+    padding: 12px 20px !important;
+    font-size: 0.95rem !important;
+    justify-content: center !important;
+  }
+
+  /* Mobile Auth Bar & Modal */
+  .header-auth {
+    margin: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    flex-shrink: 0 !important;
+  }
+  .auth-guest,
+  .auth-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .auth-guest[hidden],
+  .auth-user[hidden],
+  .auth-guest.is-hidden,
+  .auth-user.is-hidden,
+  .auth-guest[style*="display: none"],
+  .auth-guest[style*="display:none"],
+  .auth-user[style*="display: none"],
+  .auth-user[style*="display:none"] {
+    display: none !important;
+  }
+  .auth-btn {
+    font-size: 0.74rem !important;
+    padding: 0 8px !important;
+    gap: 4px !important;
+    min-height: 36px !important;
+    height: 36px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .auth-greeting {
+    font-size: 0.76rem !important;
+    white-space: nowrap !important;
+  }
+  .auth-user-name {
+    max-width: 70px !important;
+  }
+  .auth-logout-btn {
+    font-size: 0.72rem !important;
+    padding: 0 6px !important;
+    min-height: 34px !important;
+    height: 34px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+  .auth-modal-dialog {
+    max-width: 100% !important;
+    border-radius: 20px !important;
+  }
+  .auth-modal-header {
+    padding: 22px 18px 14px !important;
+  }
+  .auth-modal-body {
+    padding: 16px 18px 24px !important;
+  }
+}

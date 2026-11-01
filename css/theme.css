@@ -1,0 +1,161 @@
+/* =====================================================
+   Al-Mashreq eBookstore — theme.css (Branding overrides)
+   ===================================================== */
+
+:root{
+  --primary: var(--header-bg, #0b1b33);
+  --accent: #f28a1b;
+  --soft: var(--bg-color, #f6f9ff);
+  --card: var(--card-bg, #ffffff);
+  --text: var(--text-color, #0b1220);
+  --muted: var(--muted-color, #586174);
+  --border: var(--border-color, #e6e9f2);
+}
+
+[data-theme="dark"]{
+  --primary: var(--header-bg, #070d17);
+  --soft: var(--bg-color, #0b1322);
+  --card: var(--card-bg, #111e33);
+  --text: var(--text-color, #e2e8f0);
+  --muted: var(--muted-color, #94a3b8);
+  --border: var(--border-color, rgba(255,255,255,.10));
+}
+
+/* General background refinement */
+body{
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* =====================================================
+   Header — Sticky with Scroll Shadow & Pills style
+   ===================================================== */
+.site-header,
+.topbar{
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  min-height: 78px !important;
+  background: var(--header-bg) !important;
+  border-bottom: 1px solid rgba(255,255,255,.12) !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,.09);
+  transition: box-shadow .25s ease, background-color .25s ease;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+.site-header.is-scrolled,
+.topbar.is-scrolled{
+  box-shadow: 0 10px 30px rgba(0,0,0,.32) !important;
+}
+
+/* IMPORTANT: match new container width (1400px) */
+.site-header .container.inner,
+.site-header .container,
+.topbar .container{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  min-height: 78px !important;
+  padding: 14px 28px !important;
+  max-width: 1400px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin-inline: auto !important;
+}
+
+/* Brand - Prominent & Eye-Catching at start position */
+.site-header .brand,
+.topbar .brand{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  flex-shrink: 0 !important;
+  transition: transform .2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.site-header .brand:hover,
+.topbar .brand:hover{
+  transform: translateY(-1px) !important;
+}
+
+.site-header .brand-title,
+.topbar .brand-title{
+  color: #fff !important;
+  font-weight: 900 !important;
+  font-size: 1.25rem !important;
+  letter-spacing: -0.015em !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,.30) !important;
+}
+
+.site-header .brand-logo,
+.topbar .brand-logo{
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 14px !important;
+  background: #fff !important;
+  padding: 4px !important;
+  display: block !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,.22), 0 0 0 2px rgba(255,255,255,.25) !important;
+  object-fit: contain !important;
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .25s ease !important;
+}
+.site-header .brand:hover .brand-logo,
+.topbar .brand:hover .brand-logo{
+  transform: scale(1.06) rotate(-2deg) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35), 0 0 0 2px rgba(255,255,255,.45) !important;
+}
+
+/* Nav links - Center position */
+.site-header .nav,
+.topbar .nav{
+  margin-inline: auto !important;
+}
+
+.site-header .navlink,
+.topbar .navlink{
+  color: #fff !important;
+  background: rgba(255,255,255,.12) !important;
+  border-color: rgba(255,255,255,.16) !important;
+}
+.site-header .navlink:hover,
+.topbar .navlink:hover{
+  background: rgba(255,255,255,.20) !important;
+  border-color: rgba(255,255,255,.24) !important;
+}
+.site-header .navlink.active,
+.topbar .navlink.active{
+  background: rgba(255,255,255,.26) !important;
+  border-color: rgba(255,255,255,.34) !important;
+}
+
+/* Header Actions - Trailing position */
+.site-header .header-actions,
+.topbar .header-actions{
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Primary CTA */
+.btn.primary,
+button.primary{
+  background: linear-gradient(90deg, #3b6edb 0%, var(--accent) 100%);
+  color:#fff;
+  border: none;
+}
+.btn.primary:hover,
+button.primary:hover{
+  opacity:.95;
+}
+
+/* Minor polish: sidebar button always full width */
+.side-card .btn.primary{
+  width:100%;
+  height:44px;
+  border-radius:14px;
+}

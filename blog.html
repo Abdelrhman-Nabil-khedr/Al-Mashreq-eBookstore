@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>المدونة - مكتبة المشرق الإلكترونية</title>
+  <meta name="description" content="مقالات ومحتوى متجدد حول التراث العربي، أحدث الإصدارات الرقمية، وعالم الكتاب العربي من مكتبة المشرق الإلكترونية." />
+  <link rel="canonical" href="https://almashreqebookstore.com/blog.html" />
+  <link rel="icon" href="/assets/logo.png" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="مكتبة المشرق الإلكترونية" />
+  <meta property="og:title" content="المدونة - مكتبة المشرق الإلكترونية" />
+  <meta property="og:description" content="مقالات ومحتوى متجدد حول التراث العربي، أحدث الإصدارات الرقمية، وعالم الكتاب العربي من مكتبة المشرق الإلكترونية." />
+  <meta property="og:url" content="https://almashreqebookstore.com/blog.html" />
+  <meta property="og:image" content="https://almashreqebookstore.com/assets/logo.png" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="المدونة - مكتبة المشرق الإلكترونية" />
+  <meta name="twitter:description" content="مقالات ومحتوى متجدد حول التراث العربي، أحدث الإصدارات الرقمية، وعالم الكتاب العربي." />
+  <meta name="twitter:image" content="https://almashreqebookstore.com/assets/logo.png" />
+
+  <!-- Structured Data: Organization / BookStore -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BookStore",
+    "name": "مكتبة المشرق الإلكترونية",
+    "alternateName": "Al-Mashreq eBookstore",
+    "url": "https://almashreqebookstore.com/",
+    "logo": "https://almashreqebookstore.com/assets/logo.png",
+    "image": "https://almashreqebookstore.com/assets/logo.png",
+    "description": "مقالات ومحتوى متجدد حول التراث العربي، أحدث الإصدارات الرقمية، وعالم الكتاب العربي من مكتبة المشرق الإلكترونية.",
+    "telephone": "+201012760710",
+    "email": "Al-mashreq.ebookstore@outlook.com",
+    "sameAs": [
+      "https://wa.me/201012760710"
+    ]
+  }
+  </script>
+
+  <!-- Pre-hydration Theme & Language Script (Zero FOUC) -->
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+      var lang = localStorage.getItem('lang') || 'ar';
+      document.documentElement.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('lang', lang);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="/css/styles.css?v=13">
+  <link rel="stylesheet" href="/css/theme.css?v=13">
+  <!-- Mobile only (does not affect desktop) -->
+  <link rel="stylesheet" href="/css/mobile.css?v=1004" media="(max-width: 980px)">
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="site-header">
+  <div class="container inner">
+    <!-- Group 1: Brand (Logo + Title) -->
+    <a class="brand" href="index.html">
+      <img class="brand-logo" src="/assets/logo.png" alt="Al-Mashreq" />
+      <span class="brand-title" data-i18n="brand.title">مكتبة المشرق الإلكترونية</span>
+    </a>
+
+    <!-- Group 2: Main Navigation Links -->
+    <nav class="nav" id="mainNav" aria-label="التنقل الرئيسي">
+      <a class="navlink" href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a class="navlink" href="latest.html" data-i18n="nav.latest">أحدث الإصدارات</a>
+      <a class="navlink" href="vision.html" data-i18n="nav.vision">الرؤية والمهمة</a>
+      <a class="navlink" href="about.html" data-i18n="nav.about">من نحن</a>
+      <a class="navlink active" href="blog.html" data-i18n="nav.blog">المدونة</a>
+      <a class="navlink" href="contact.html" data-i18n="nav.contact">اتصل بنا</a>
+    </nav>
+
+    <!-- Group 3: Header Actions -->
+    <div class="header-actions">
+      <!-- Primary Auth Section -->
+      <div class="header-auth" id="headerAuth">
+        <!-- Guest State (Shown when not logged in) -->
+        <div class="auth-guest" id="authGuest">
+          <button type="button" class="header-action-btn auth-btn" id="openAuthModalBtn" aria-label="تسجيل الدخول أو حساب جديد" title="تسجيل الدخول / حساب جديد">
+            <svg class="auth-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <span class="auth-btn-text" data-i18n="auth.loginOrRegister">تسجيل الدخول / حساب جديد</span>
+          </button>
+        </div>
+
+        <!-- User State (Shown when logged in) -->
+        <div class="auth-user" id="authUser" style="display: none;">
+          <span class="auth-greeting">
+            <span data-i18n="auth.hello">مرحباً،</span>
+            <strong class="auth-user-name" id="authUserName"></strong>
+          </span>
+          <button type="button" class="header-action-btn auth-logout-btn" id="logoutBtn" aria-label="تسجيل الخروج" title="تسجيل الخروج">
+            <svg class="auth-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+              <polyline points="16 17 21 12 16 7"></polyline>
+              <line x1="21" y1="12" x2="9" y2="12"></line>
+            </svg>
+            <span class="auth-btn-text" data-i18n="auth.logout">تسجيل الخروج</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Secondary Controls: Theme, Language, Menu -->
+      <div class="header-secondary-actions">
+        <!-- Dark / Light Mode Toggle -->
+        <button type="button" class="header-action-btn theme-toggle" id="themeToggle" aria-label="تبديل المظهر" title="تبديل الوضع الداكن / الفاتح">
+          <svg class="theme-icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <span class="action-btn-text" data-i18n="theme.toggle">داكن</span>
+        </button>
+
+        <!-- Language Toggle (EN/AR) -->
+        <button type="button" class="header-action-btn lang-toggle" id="langToggle" aria-label="Switch Language" title="تغيير اللغة (EN/AR)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
+          </svg>
+          <span class="lang-text" id="langToggleText">English</span>
+        </button>
+
+        <!-- Mobile Menu Hamburger Button -->
+        <button type="button" class="header-action-btn menu-toggle" id="menuToggle" aria-label="القائمة" aria-expanded="false" title="القائمة">
+          <svg class="icon-menu" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="icon-close" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+          <span class="menu-toggle-text" data-i18n="nav.menu">القائمة</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <main class="container page-shell" style="max-width:1200px;margin:0 auto;padding:26px 16px">
+    <!-- Arabic Blog -->
+    <div class="lang-ar">
+      <section class="card">
+        <h1 class="page-title">المدونة</h1>
+        <p class="page-sub">
+          مقالات ومحتوى متجدد حول التراث العربي والإصدارات الرقمية الجديدة.
+        </p>
+      </section>
+
+      <div id="blogList"></div>
+    </div>
+
+    <!-- English Blog -->
+    <div class="lang-en">
+      <section class="card">
+        <h1 class="page-title">Blog & Insights</h1>
+        <p class="page-sub">
+          Literary heritage stories, author journeys, and updates on Arabic digital publishing.
+        </p>
+      </section>
+
+      <div id="blogListEn">
+        <!-- English Post 1 -->
+        <article class="card" style="margin-bottom:14px;border-radius:16px;padding:20px">
+          <h2 style="margin:0 0 6px;font-size:1.2rem;font-weight:800;color:var(--text-color)">Welcome to Al-Mashreq Blog</h2>
+          <div style="opacity:.75;font-size:13px;margin-bottom:10px;color:var(--muted-color)">2026-02-08</div>
+          <p style="margin:0 0 12px;line-height:1.8;color:var(--text-color)">
+            The Story of Al-Mashreq eBookstore: “When a Book Becomes a Home” — How a simple question in 2015 sparked one of the largest Arabic digital literary archives.
+          </p>
+          <details style="cursor:pointer">
+            <summary style="font-weight:800;color:var(--blue);cursor:pointer;padding:6px 0">Read Full Article</summary>
+            <div style="margin-top:14px;line-height:1.9;color:var(--text-color)">
+              <div style="font-weight:800;font-size:1.15rem;margin-bottom:8px">The Story of Al-Mashreq eBookstore</div>
+              <div style="font-style:italic;font-weight:600;opacity:.9;margin-bottom:14px">“When a Book Becomes a Home”</div>
+              <p>In 2015, Al-Mashreq did not begin as a commercial enterprise, nor as a tech platform, nor even as a finished concept. It began with a question. A simple question that lived in the mind of an avid reader: <em>Why is it so difficult to discover quality Arabic books with ease? And why do so many timeless literary works get lost in the noise?</em></p>
+              <p>At that time, the reading landscape was shifting. The world was transforming into a handheld screen, and physical print was no longer the sole gateway to knowledge. Yet something was missing: there was no digital sanctuary where the Arabic reader felt truly at home. From that realization, the idea was born. Not merely a storefront, but a new 'Sunrise' (Mashreq) for the written word.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Beginning</h3>
+              <p>The journey was by no means effortless. A modest handful of titles, countless hours behind the scenes, typesetting, editorial revision, and formatting. Yet the guiding purpose was crystal clear: to establish a digital library that respects the reader, respects the book, and honors the idea. Every book added was treated as a message. Every cover was curated with reverence. Every description was penned with care.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Growth</h3>
+              <p>From dozens of titles to hundreds, and then into thousands of books: Arabic novels, children's illustrated stories, scholarly references, classical and modern poetry, biographies, and timeless classical masterpieces. The goal was never merely selling books. It was opening doorways: a doorway for a child reading their very first story, a doorway for a young adult seeking a novel that transforms their worldview, and a doorway for a lifelong scholar returning to a treasure they fell in love with years ago.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Relationship with the Reader</h3>
+              <p>Al-Mashreq has never been just a website. It is a bond of trust between reader and platform. When readers arrive and instantly find what they seek, when they encounter genuine diversity, and when they feel their reading experience is valued and cherished. We believe that a book is not a commodity—it is an enduring impression. And the reader is not a customer—they are a companion on the journey.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Moral</h3>
+              <p>This is not simply the story of a bookstore. It is a story of faith in an idea: that culture knows no geographic borders, that technology is not the enemy of books but their modern wings, and that true investment lies in human minds. From 2015 to this day, the journey carries on.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">Today... and Tomorrow</h3>
+              <p>Today, Al-Mashreq eBookstore is more than a catalog; it is a realm of knowledge, a digital archive, and a bridge connecting our proud past to a luminous future. And tomorrow? We will continue building, introducing new titles, and remaining faithful to our founding pledge: that Al-Mashreq will remain a beacon of light as long as there is a reader seeking a book.</p>
+            </div>
+          </details>
+        </article>
+
+        <!-- English Post 2 -->
+        <article class="card" style="margin-bottom:14px;border-radius:16px;padding:20px">
+          <h2 style="margin:0 0 6px;font-size:1.2rem;font-weight:800;color:var(--text-color)">When the Light Almost Faded</h2>
+          <div style="opacity:.75;font-size:13px;margin-bottom:10px;color:var(--muted-color)">2026-02-19</div>
+          <p style="margin:0 0 12px;line-height:1.8;color:var(--text-color)">
+            A story that began with a small loss... and concluded with an enduring purpose: that no child sleeps without their bedtime story.
+          </p>
+          <details style="cursor:pointer">
+            <summary style="font-weight:800;color:var(--blue);cursor:pointer;padding:6px 0">Read Full Article</summary>
+            <div style="margin-top:14px;line-height:1.9;color:var(--text-color)">
+              <div style="font-weight:800;font-size:1.15rem;margin-bottom:8px">When the Light Almost Faded</div>
+              <p>In 2015, we were not thinking of launching a bookstore. We were thinking of a loss. There was a young child in a distant town who asked his father every evening for a beloved story he had heard so much about. A story that was nowhere to be found. The father searched tirelessly through bookstores, book fairs, and old warehouses. Everywhere, the answer was the same: <em>“Out of print.”</em></p>
+              <p>That night, the father returned empty-handed. And the child fell asleep without hearing his story. It might seem like a fleeting moment, yet it was profoundly significant. Because every book that fails to reach its reader is a lost opportunity. And every idea that goes unread is a spark of light that almost faded.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">A Question That Never Left Us</h3>
+              <p>In those days, an aching reality became clear: books do not perish because they are fragile—they perish because they cannot find a pathway to their readers. How many brilliant ideas were forgotten because a shelf closed? How many authors wrote with genuine sincerity, only for their voice to dwindle when physical print runs exhausted? That night, we were thinking of light. If an idea is illumination, why should we ever let it extinguish?</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Birth of Al-Mashreq</h3>
+              <p>And so, Al-Mashreq eBookstore was founded. Not simply to be a website, nor merely an online shop. Rather, to stand as a bridge between an idea written in history and a reader waiting for it today. We resolved to grant books a life that never terminates with a print run, to transcend borders, and to make discovery easier than loss.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">Why “Al-Mashreq”?</h3>
+              <p>Because Al-Mashreq signifies the East, the place of sunrise. And sunrise does not happen only once. Every single day, the sun returns. And every day, an idea can rise again. From 2015 until today, our library has flourished, but our heart remains where it began: a heart that remembers that quiet evening of a child who fell asleep without his bedtime story.</p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">Today… You Are Part of the Story</h3>
+              <p>Perhaps you are the reader searching right now. Perhaps a life-changing book is waiting for you here. Al-Mashreq was never built for vanity metrics; it was built for that sacred moment when a reader says: <em>“I found it. I found the book I had longed for.”</em></p>
+              
+              <h3 style="font-weight:800;font-size:1.1rem;margin:16px 0 6px">The Moral</h3>
+              <p>When we safeguard books, we safeguard light. And when we bring authors and readers together, we bring humanity closer to its dreams. This is more than an eBook store. This is a lifelong conviction that ideas deserve to live, and that no child should ever sleep again with their story missing.</p>
+            </div>
+          </details>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer (Task 6: Modern Global Footer) -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+
+      <!-- Top Columns Grid -->
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand & About -->
+        <div class="footer-col footer-col-brand">
+          <a class="foot-brand" href="index.html" aria-label="Al-Mashreq eBookstore">
+            <img class="foot-logo" src="/assets/logo.png" alt="Al-Mashreq" width="46" height="46" loading="lazy" />
+            <div class="foot-brand-text">
+              <strong data-i18n="brand.title">مكتبة المشرق الإلكترونية</strong>
+              <span class="foot-brand-tag" data-i18n="footer.desc">الاحترافية — التناغم — التواصل</span>
+            </div>
+          </a>
+          <p class="foot-bio" data-i18n="footer.brandBio">
+            أكبر مكتبة رقمية عربية تضم آلاف الكتب التراثية والمترجمة وكتب الأطفال لإحياء المجتمع الثقافي العربي بجودة عالية.
+          </p>
+          <div class="foot-socials" aria-label="وسائل التواصل الاجتماعي">
+            <!-- WhatsApp -->
+            <a class="social-btn" href="https://wa.me/201012760710" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            </a>
+            <!-- Email -->
+            <a class="social-btn" href="mailto:Al-mashreq.ebookstore@outlook.com" aria-label="Email" title="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <!-- Facebook -->
+            <a class="social-btn" href="https://www.facebook.com/share/1FVnu3cTWN/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+            </a>
+            <!-- YouTube -->
+            <a class="social-btn" href="https://www.youtube.com/@al-mashreqebookstore2209" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+            <!-- Amazon -->
+            <a class="social-btn" href="https://www.amazon.com/s?k=Al-Mashreq+eBookstore&i=digital-text" target="_blank" rel="noopener" aria-label="Amazon" title="Amazon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+            </a>
+            <!-- OverDrive -->
+            <a class="social-btn" href="https://www.overdrive.com/publishers/al-mashreq-ebookstore" target="_blank" rel="noopener" aria-label="OverDrive" title="OverDrive">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+            </a>
+            <!-- YouScribe -->
+            <a class="social-btn" href="https://en.youscribe.com/al_mashreq/" target="_blank" rel="noopener" aria-label="YouScribe" title="YouScribe">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </a>
+            <!-- Jarir -->
+            <a class="social-btn" href="https://www.jarirreader.com/ar/publisher/272/%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D8%A7%D9%84%D9%85%D8%B4%D8%B1%D9%82-%D8%A7%D9%84%D8%A5%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A%D8%A9" target="_blank" rel="noopener" aria-label="Jarir" title="Jarir">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </a>
+            <!-- Rufoof -->
+            <a class="social-btn" href="https://rufoof.com/ar/publisher/362/Al-Mashreq-eBookstore" target="_blank" rel="noopener" aria-label="Rufoof" title="Rufoof">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colQuick">روابط سريعة</h3>
+          <ul class="footer-links">
+            <li><a href="index.html" class="foot-nav-item" data-i18n="nav.home">الرئيسية</a></li>
+            <li><a href="latest.html" class="foot-nav-item" data-i18n="nav.latest">أحدث الإصدارات</a></li>
+            <li><a href="vision.html" class="foot-nav-item" data-i18n="nav.vision">الرؤية والمهمة</a></li>
+            <li><a href="about.html" class="foot-nav-item" data-i18n="nav.about">من نحن</a></li>
+            <li><a href="blog.html" class="foot-nav-item" data-i18n="nav.blog">المدونة</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Explore Books -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colExplore">استكشف الكتب</h3>
+          <ul class="footer-links">
+            <li><a href="index.html?category=Fiction" class="foot-nav-item footer-cat-link" data-cat="Fiction" data-i18n="footer.catFiction">روايات وأدب</a></li>
+            <li><a href="index.html?category=Heritage" class="foot-nav-item footer-cat-link" data-cat="Heritage" data-i18n="footer.catHeritage">كتب التراث العربي</a></li>
+            <li><a href="index.html?category=Nonfiction" class="foot-nav-item footer-cat-link" data-cat="Nonfiction" data-i18n="footer.catTrans">ترجمات عالمية</a></li>
+            <li><a href="index.html?category=Children%27s+Fiction" class="foot-nav-item footer-cat-link" data-cat="Children's Fiction" data-i18n="footer.catKids">كتب الأطفال واليافعين</a></li>
+            <li><a href="index.html?category=" class="foot-nav-item footer-cat-link" data-cat="" data-i18n="footer.catAll">الفهرس الشامل</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & Legal -->
+        <div class="footer-col">
+          <h3 class="footer-heading" data-i18n="footer.colSupport">الدعم والمساعدة</h3>
+          <ul class="footer-links">
+            <li><a href="contact.html" class="foot-nav-item" data-i18n="footer.contact">اتصل بنا</a></li>
+            <li><a href="terms.html" class="foot-nav-item" data-i18n="footer.terms">الشروط والأحكام</a></li>
+            <li><a href="privacy.html" class="foot-nav-item" data-i18n="footer.privacy">سياسة الخصوصية</a></li>
+            <li><a href="https://wa.me/201012760710" target="_blank" rel="noopener" class="foot-nav-item" data-i18n="footer.whatsapp">دعم واتساب</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar Row -->
+      <div class="footer-bottom">
+        <div class="foot-copy">
+          © <span id="year"></span> <span data-i18n="footer.copy">مكتبة المشرق الإلكترونية — جميع الحقوق محفوظة</span>
+        </div>
+
+        <div class="footer-bottom-meta">
+          <span class="foot-craft" data-i18n="footer.madeWith">صُنع بعناية للقارئ العربي</span>
+          <button type="button" class="back-to-top" id="backToTop" aria-label="العودة للأعلى" title="العودة للأعلى">
+            <span data-i18n="footer.backToTop">للأعلى</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="/js/global.js?v=13"></script>
+  <script src="/js/blog.js?v=13"></script>
+</body>
+</html>
